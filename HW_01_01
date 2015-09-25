@@ -1,0 +1,39 @@
+/*
+#####################################################################
+#Author:	Kyle Di Giorgio											#
+#Course:	COSC 647												#
+#Date:		09/25/2015												#
+#Description:	This program takes in two integers from the user.	#
+#				It then compares the two integers to determine the	#
+# 				greatest common denominator.						#
+#####################################################################
+*/
+#include <stdio.h>
+
+void input();
+
+int main(){
+		
+	printf("The purpose of this pogram is to take in \n");
+	printf("two integers from a user and then compare them \n");
+	printf("to find the greatest common divisor of the two integers. \n \n ");
+	
+	input();
+	
+	return 0;
+}
+
+void input(){
+	int input1;
+	int input2;
+	
+	printf("Enter two integers to determine their GCD.\n");
+	printf("Enter integer 1: ");
+	scanf("%d", &input1);
+	printf("Intput 1 = %d \n", input1);
+	printf("Enter integer 2: ");
+	scanf("%d", &input2);
+	printf("Input 2 = %d \n", input2);
+	
+}	
+	
