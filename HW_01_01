@@ -10,22 +10,15 @@
 */
 #include <stdio.h>
 
-void input();
+void gcd(int x, int y);
 
 int main(){
+	int input1, input2;
 		
 	printf("The purpose of this pogram is to take in \n");
 	printf("two integers from a user and then compare them \n");
 	printf("to find the greatest common divisor of the two integers. \n \n ");
 	
-	input();
-	
-	return 0;
-}
-
-void input(){
-	int input1;
-	int input2;
 	
 	printf("Enter two integers to determine their GCD.\n");
 	printf("Enter integer 1: ");
@@ -35,5 +28,34 @@ void input(){
 	scanf("%d", &input2);
 	printf("Input 2 = %d \n", input2);
 	
-}	
+	gcd(input1, input2);
 	
+	return 0;
+}
+
+void gcd(int x, int y){
+	int dividend;
+	int divisor;
+	int quotient;
+	int remainder;
+	
+	if(x > y){
+		dividend = abs(x);
+		divisor = abs(y);
+	}
+	else{
+		dividend = abs(y);
+		divisor = x;
+	}
+	printf("Dividend= %d \n",dividend);
+	printf("Divisor= %d \n", divisor);	
+	
+	do{
+		quotient = dividend/divisor;
+		remainder = dividend%divisor;
+		dividend=divisor;
+		divisor=remainder;
+	}while(remainder != 0);
+	
+	printf("The greatest common denominator of %d and %d is %d", x,y,dividend);
+}
