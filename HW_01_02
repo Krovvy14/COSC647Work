@@ -1,0 +1,51 @@
+/*
+#####################################################################
+#Author:	Kyle Di Giorgio											#
+#Course:	COSC 647												#
+#Date:		09/26/2015												#
+#Description:	This program takes in one integer from the user.	#
+#				It then outputs the next prime number that is 		#
+#				greater than the integer provided.					#
+#####################################################################
+*/
+
+#include <stdio.h>
+
+void nextPrime(int x);
+
+int main(){
+	
+	int input;
+	
+	printf("Please enter one integer.  This program will ");
+	printf("then determine the next prime number greater than ");
+	printf("the entered integer.\n \n");
+	
+	printf("Enter an integer \n");
+	scanf("%d", &input);
+	
+	nextPrime(input);
+	
+	return 0;
+}
+//function to determine the next prime number after the 
+//input number
+void nextPrime(int x){
+	int remainder;	//value to hold the remainder of mod division during checks
+	int i = 2;		//index for doing division checks to find prime
+	
+	//logic for calculating next prime
+	//CURRENTLY NOT WORKING
+	for(x++;remainder!=0;x++){
+		printf("x is: %d \n", x);
+		
+		for(i;i<10 || remainder == 0;i++){
+			remainder = x%i;
+			printf("remainder is: %d \n", remainder);
+		}	
+	}
+	
+
+	printf("The next greatest prime number is %d.", x);
+	
+}
