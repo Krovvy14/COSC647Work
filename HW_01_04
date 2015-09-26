@@ -1,0 +1,22 @@
+/*
+#################################################################
+#Author:Kyle DiGiorgio						#
+#Course:	COSC 647					#
+#Date:		09/26/2015					#
+#Description:	A simple "Hello World" program but with some	#
+#		extra variables to observe the behavior of the 	#		
+#		program under certain conditions.		#		
+#################################################################
+*/
+
+#include <stdio.h>
+
+int main(){
+	int x= 100;
+	double y= 8624;
+	char z;
+	long buddy;
+
+	printf("Hello World! \n");
+	return 0;
+}
