@@ -8,44 +8,41 @@
 #				greater than the integer provided.					#
 #####################################################################
 */
-
 #include <stdio.h>
 
-void nextPrime(int x);
+int nextPrime(int x);	//my function to calculate whether the next # is prime
 
 int main(){
+	int i, input;
+	int flag=0;			//I use the flag variable to do my loop control
 	
-	int input;
+	printf("Enter an integer:");	//get user input and echo input
+	scanf("%d",&input);
+	printf("%d entered\n",input);
 	
-	printf("Please enter one integer.  This program will ");
-	printf("then determine the next prime number greater than ");
-	printf("the entered integer.\n \n");
+	for(i=input+1;flag==0;i++){		//Initialized flag to 0 so when the
+		flag=nextPrime(i);			//prime value is returned the loop will exit.
 	
-	printf("Enter an integer \n");
-	scanf("%d", &input);
-	
-	nextPrime(input);
-	
+		
+	}
+	printf("The next prime number is: %d\n",flag);
 	return 0;
 }
-//function to determine the next prime number after the 
-//input number
-void nextPrime(int x){
-	int remainder;	//value to hold the remainder of mod division during checks
-	int i = 2;		//index for doing division checks to find prime
-	
-	//logic for calculating next prime
-	//CURRENTLY NOT WORKING
-	for(x++;remainder!=0;x++){
-		printf("x is: %d \n", x);
-		
-		for(i;i<10 || remainder == 0;i++){
-			remainder = x%i;
-			printf("remainder is: %d \n", remainder);
-		}	
-	}
-	
 
-	printf("The next greatest prime number is %d.", x);
+//Takes the user input and does modular division to determine whether
+//the current # is prime or not. If it is not prime it returns a 0 value 
+//and the loop in main increments until a non-0 value is returned.
+int nextPrime(int x){
+	int i;
 	
+	for(i=2;i<x;i++){
+		
+		
+		if(x%i==0){
+			return 0;
+		}
+		else if(i==x){
+			return x;
+		}
+	}
 }
