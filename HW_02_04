@@ -1,0 +1,50 @@
+/*
+#####################################################################
+#Author:	Kyle Di Giorgio											#
+#Course:	COSC 647												#
+#Date:		10/19/2015											    #
+#Description:	This program takes in two integers from the user.	#
+#				It then outputs the sum and product of the two		#
+#				integers provided. If the sum or product of the 	#
+#				two integers provided is larger than 16-bits it     #
+#               will result in an integer overflow. In addition     #
+#				this code provides detection for the integer 		#
+#				overflow.											#
+#####################################################################
+*/
+#include <stdio.h>
+#include <limits.h>
+
+int main(){
+  int arg1, arg2;
+  int sum = NULL;
+  int product = NULL;
+  
+  printf("This program takes 2 positive integers and returns the\n");
+  printf("Sum and Product of the two supplied arguments.\n");
+  
+  printf("Enter the first number to be added and multiplied.\n");
+  scanf("%d", &arg1); 
+  printf("Enter the second number to be added and multiplied.\n");
+  scanf("%d", &arg2); 
+  printf("Argument 1 is: %d. \n Argumnent 2 is: %d.\n", arg1, arg2);
+  
+  sum = arg1 + arg2;
+  product = arg1 * arg2;
+  if(arg1 < 0|| arg2 < 0){
+	  printf("Integer overflow detected!\n");  
+  }
+  else if(sum < arg1 || sum < arg2){
+	  printf("Sum Integer Overflow detected!\n");
+  }
+  else if(product < 0){
+	  printf("Multiplication Integer Overflow detected!\n");
+  }
+  else{
+	printf("The sum of arg 1 and arg2 is: %d. \n", sum);
+	printf("The product of arg 1 and arg2 is: %d. \n", product);
+  }
+  
+  
+  return 0;
+}
